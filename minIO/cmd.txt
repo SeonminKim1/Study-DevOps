@@ -1,0 +1,10 @@
+cd C:\Users\urse\Desktop\NeuralWorks\_minio
+
+minio server storage2
+
+http://127.0.0.1:9000/minio/
+
+minioadmin / minioadmin
+
+python miniIO_Create_Bucket_Object_Uplad
+python miniIO_Object_Download_Simple
