@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>부트스트랩 심화1</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Jua', sans-serif;}
+
+        .wrap {
+            margin: auto;
+            width: 900px;
+        }
+        .btn-primary {
+            margin: 10px;
+            padding: 10px;
+        }
+        .posting-box {
+            margin: 10px auto 30px auto;
+            width:700px;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding: 25px;
+        }
+    </style>
+    <script>
+        function method_1(){
+            // id 값이 post-url인 곳을 가리키고, val()로 값을 가져온다.
+            v = $('#value').val();
+            alert('가져온 값은 : ' + v + "내용이 추가됩니다.");
+            $('#value').val(v+' 울랄라숑')
+        }
+
+        function method_2(){
+            // css 값 가져오기 (우리는 display 속성 값을 가져와볼게요!)
+            v = $('#text-box').css('display');
+            alert('css 가져온 내용은 : ' + v);
+        }
+
+        function method_3(){ // openclose
+            // case 1 - id 값이 text-box인 곳을 가리키고, hide()로 안보이게 한다.(=css의 display 값을 none으로 바꾼다)
+            let status = $('#text-box').css('display');
+            if (status == 'block') {
+                $('#text-box').hide()
+                $('#openclose-box').text('JQuery-열기')
+                }
+            // case 2 - show()로 보이게 한다.(=css의 display 값을 block으로 바꾼다)
+            else {
+                $('#text-box').show()
+                $('#openclose-box').text('JQuery-닫기')
+            }
+            // $('#text-box').show();
+        }
+
+        
+        function method_4(){
+            // 주의: 홑따옴표(')가 아닌 backtick(`)으로 감싸야 합니다.
+            // backtick을 사용하면 문자 중간에 Javascript 변수를 삽입할 수 있습니다.
+            let title = 'JQuery로 추가됨' ;
+            let comment = '코멘트~~~';
+            let temp_html = `<div class="abcde">
+                                <label>${title}</label>
+                                <input id = "text-box" type="text" class="form-control" placeholder="${comment}">
+                            </div>`
+            $('#box').append(temp_html);
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="jumbotron">
+            <h1 class="display-4">중요 링크 메모장!</h1>
+            <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
+            <hr class="my-4">
+        </div>
+        <div class="posting-box" id="box">
+            <div class="form-group">
+                <label>값 입력</label>
+                <input id="value" type="text" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+                <label>텍스트 입력</label>
+                <input id = "text-box" type="text" class="form-control" placeholder="">
+            </div>
+            <div style="display:flex">
+                <button onclick="method_1()" type="submit" class="btn btn-primary">JQuery-val</button>
+                <button onclick="method_2()" type="submit" class="btn btn-primary">JQuery-css</button>
+                <button onclick="method_3()" type="submit" class="btn btn-primary" id="openclose-box">JQuery-닫기</button>
+                <button onclick="method_4()" type="submit" class="btn btn-primary">JQuery-append-html</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
