@@ -1,27 +1,22 @@
-## MLOPS
-### Docker_ELK
-- Docker with ELK 
+## DevOps & Infra
+
+### Docker Python SDK
+- A Python library for the Docker Engine API
+- Docker_Python_SDK/
 
 ### Kubernetes
 - Open-source container orchestration system
 - Perform software deployment, scaling, and management automation.
+- Kubernetes/
 
 ### minIO
 - Open-Source Object Storage for on-premise
+- minIO/
 
-<hr>
-
-## Backend
-### HTML, CSS, JS
-- HTML, CSS, JavaScript Basic
-
-### JQuery & Ajax
-- JQuery & Ajax Basic
-- JQuery : Used to control JavaScript easily
-- Ajax (Asynchronous Javascript And Xml) : For creating fast-paced, dynamic web pages.
-
-<hr>
-
-## ETC
 ### sh_script
-- sh scripts
+- sh scripts Examples
+- sh_script/
+
+### docs
+- Container System & Orchestration.md
+- ELK Stack.md
